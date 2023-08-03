@@ -1,0 +1,9 @@
+.btn-buy {
+  background-color: $btnColorAdded;
+  border-color: $btnColorAdded;
+}
+
+.btn-buy .cart-added {
+  background-color: $btnColorTimerOver;
+  border-color: $btnColorTimerOver;
+}
