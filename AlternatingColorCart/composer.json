@@ -1,0 +1,18 @@
+{
+  "name": "mme/alternatingcolorcart",
+  "description": "Changes color for 1 second after adding item to cart",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "AlternatingColorCart\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "AlternatingColorCart\\AlternatingColorCart",
+    "label": {
+      "de-DE": "Plugin Farbwechsel Einkaufswagen",
+      "en-GB": "Plugin Alternating Color Shoppingcart"
+    }
+  }
+}

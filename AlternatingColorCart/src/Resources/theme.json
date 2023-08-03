@@ -1,0 +1,55 @@
+{
+  "name": "AlternatingColorCart",
+  "author": "Manuel Metzger",
+  "views": ["@Storefront", "@Plugins", "@AlternatingColorCart"],
+  "style": [
+    "app/storefront/src/scss/overrides.scss",
+    "@Storefront",
+    "app/storefront/src/scss/base.scss"
+  ],
+  "script": [
+    "@Storefront",
+    "app/storefront/dist/storefront/js/alternating-color-cart.js"
+  ],
+  "asset": ["@Storefront", "app/storefront/src/assets"],
+  "config": {
+    "blocks": {
+      "settings": {
+        "label": {
+          "en-GB": "Plugin Settings",
+          "de-DE": "Plugin-Einstellungen"
+        }
+      }
+    },
+    "sections": {
+      "newVariables": {
+        "label": {
+          "en-GB": "New Variables",
+          "de-DE": "Neue Variablen"
+        }
+      }
+    },
+    "fields": {
+      "btnColorAdded": {
+        "label": {
+          "en-GB": "Button color on add",
+          "de-DE": "Knopffarbe bei Hinzufügen"
+        },
+        "type": "color",
+        "block": "settings",
+        "section": "newVariables",
+        "value": "#EF8376"
+      },
+      "btnColorTimerOver": {
+        "label": {
+          "en-GB": "Button color on timer over",
+          "de-DE": "Knopffarbe bei Ablauf des Timers"
+        },
+        "type": "color",
+        "block": "settings",
+        "section": "newVariables",
+        "value": "#EF8376"
+      }
+    }
+  }
+}
