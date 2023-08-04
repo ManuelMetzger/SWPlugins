@@ -11,8 +11,8 @@
   "extra": {
     "shopware-plugin-class": "AlternatingColorCart\\AlternatingColorCart",
     "label": {
-      "de-DE": "Plugin Farbwechsel Einkaufswagen",
-      "en-GB": "Plugin Alternating Color Shoppingcart"
+      "de-DE": "Theme Farbwechsel Einkaufswagen",
+      "en-GB": "Theme Alternating Color Shoppingcart"
     }
   }
 }

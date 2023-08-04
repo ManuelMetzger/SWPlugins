@@ -1,9 +1,14 @@
-.btn-buy {
-  background-color: $btnColorAdded;
-  border-color: $btnColorAdded;
-}
-
-.btn-buy .cart-added {
+.btn-details-buy {
   background-color: $btnColorTimerOver;
   border-color: $btnColorTimerOver;
+}
+
+.btn-details-buy:hover {
+  background-color: $btnColorAddToCart;
+  border-color: $btnColorAddToCart;
+}
+
+.cart-added {
+  background-color: $btnColorAddToCart;
+  border-color: $btnColorAddToCart;
 }
