@@ -2,7 +2,6 @@ import Plugin from "src/plugin-system/plugin.class";
 
 export default class ColorChange extends Plugin {
   init() {
-    console.info("Plugin ColorChange Loaded");
     this.modifyEventListeners();
   }
 
@@ -13,6 +12,8 @@ export default class ColorChange extends Plugin {
 
   toggleClassName() {
     this.el.classList.add("cart-added");
-    setTimeout(()=>{this.el.classList.remove("cart-added")}, 1000)
+    setTimeout(() => {
+      this.el.classList.remove("cart-added");
+    }, 1000);
   }
 }
