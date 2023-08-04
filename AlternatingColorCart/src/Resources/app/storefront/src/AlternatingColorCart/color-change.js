@@ -1,6 +1,11 @@
 import Plugin from "src/plugin-system/plugin.class";
 
 export default class ColorChange extends Plugin {
+  static options = {
+    colorSwitchClass: "cart-added",
+    timeOutMillisec: 1000
+  }
+
   init() {
     this.modifyEventListeners();
   }
@@ -11,9 +16,9 @@ export default class ColorChange extends Plugin {
   }
 
   toggleClassName() {
-    this.el.classList.add("cart-added");
+    this.el.classList.add(this.options.colorSwitchClass);
     setTimeout(() => {
-      this.el.classList.remove("cart-added");
-    }, 1000);
+      this.el.classList.remove(this.options.colorSwitchClass);
+    }, this.options.timeOutMillisec);
   }
 }
