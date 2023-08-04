@@ -3,13 +3,7 @@ import Plugin from "src/plugin-system/plugin.class";
 export default class ColorChange extends Plugin {
   init() {
     console.info("Plugin ColorChange Loaded");
-
-    this.getButton();
     this.modifyEventListeners();
-  }
-
-  getButton() {
-    console.log(this);
   }
 
   modifyEventListeners() {
