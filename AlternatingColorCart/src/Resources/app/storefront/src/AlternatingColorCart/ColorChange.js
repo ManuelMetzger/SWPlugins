@@ -13,8 +13,6 @@ export default class ColorChange extends Plugin {
 
   toggleClassName() {
     this.el.classList.add("cart-added");
-    console.log(this.el.classList);
     setTimeout(()=>{this.el.classList.remove("cart-added")}, 1000)
-    console.log(this.el.classList);
   }
 }
