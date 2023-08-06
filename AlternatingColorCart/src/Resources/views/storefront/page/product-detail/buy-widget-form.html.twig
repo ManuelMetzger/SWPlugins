@@ -6,11 +6,13 @@
   btnTextAddCart: "detail.btnTextAddCart"|trans|sw_sanitize,
 } %}
 
+{% set formAction = path('frontend.checkout.line-item.add') %}
+
 {% block page_product_detail_buy_form_inner %}
   {# @var page \Shopware\Storefront\Page\Product\ProductPage #}
 
   {# @var product \Shopware\Core\Content\Product\SalesChannel\SalesChannelProductEntity #}
-  {# {% set product = page.product %} #}
+  {% set product = page.product %}
 
   <form
       id="productDetailPageBuyProductForm"
