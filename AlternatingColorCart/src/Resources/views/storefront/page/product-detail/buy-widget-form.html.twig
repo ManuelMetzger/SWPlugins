@@ -1,21 +1,27 @@
 {% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
 
 {% set pluginOptions = {
-  timeOutMillisec: theme_config('timeOutMillisec')
+  timeOutMillisec: theme_config('timeOutMillisec'),
+  addProduct: "detail.addProduct"|trans|sw_sanitize,
+  btnTextAddCart: "detail.btnTextAddCart"|trans|sw_sanitize,
 } %}
 
-{% block page_product_detail_buy_button_container %}
-  <div class="{% if showQuantitySelect %}col-8{% else %}col-12{% endif %}">
-      {% block page_product_detail_buy_button %}
-          <div class="d-grid">
-              <button class="btn btn-primary btn-buy btn-details-buy"
-                      title="{{ "detail.addProduct"|trans|striptags }}"
-                      aria-label="{{ "detail.addProduct"|trans|striptags }}"
-                      data-color-change-options = '{{ pluginOptions|json_encode }}'
-                      >
-                  {{ "detail.addProduct"|trans|sw_sanitize }}
-              </button>
-          </div>
-      {% endblock %}
-  </div>
+{% block page_product_detail_buy_form_inner %}
+  {# @var page \Shopware\Storefront\Page\Product\ProductPage #}
+
+  {# @var product \Shopware\Core\Content\Product\SalesChannel\SalesChannelProductEntity #}
+  {# {% set product = page.product %} #}
+
+  <form
+      id="productDetailPageBuyProductForm"
+      action="{% block page_product_detail_buy_form_action %}{# @deprecated tag:v6.6.0 - block will be removed, overwrite `formAction` instead #}{{ formAction }}{% endblock %}"
+      method="post"
+      class="buy-widget"
+      data-add-to-cart="true"
+      data-add-to-cart-options = '{{ pluginOptions|json_encode }}'>
+        {% set DOWNLOAD_STATE = constant('Shopware\\Core\\Content\\Product\\State::IS_DOWNLOAD') %}
+        {% set showQuantitySelect = not product.states is defined or DOWNLOAD_STATE not in product.states or (DOWNLOAD_STATE in product.states and product.maxPurchase !== 1) %}
+        {% set buyable = product.available and product.childCount <= 0 and product.calculatedMaxPurchase > 0 %}
+        {{ parent() }}
+  </form>
 {% endblock %}

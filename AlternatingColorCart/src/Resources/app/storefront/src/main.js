@@ -3,6 +3,4 @@
 
  // Register your plugin via the existing PluginManager
  const PluginManager = window.PluginManager;
- PluginManager.register('ColorChange', ColorChange, '.btn-details-buy',{
-  "timeOutMillisec": "5000"
- });
+ PluginManager.override('AddToCart', ColorChange, '[data-add-to-cart]');
